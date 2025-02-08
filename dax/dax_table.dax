@@ -1,0 +1,10 @@
+Date Table = 
+ADDCOLUMNS (
+  CALENDARAUTO(),  // Auto-detect min/max dates from your data
+  "Year", YEAR([Date]),
+  "Quarter", "Q" & FORMAT([Date], "Q"),
+  "Month", FORMAT([Date], "MMMM"),
+  "MonthNumber", MONTH([Date]),
+  "WeekNumber", WEEKNUM([Date], 2),  // Week starts on Monday
+  "DayOfWeek", FORMAT([Date], "dddd")
+)
